@@ -1,0 +1,9 @@
+---
+# handlers file for linux_fail2ban
+
+  - name: start and enable fail2ban
+    systemd:
+      state: started
+      enabled: yes
+      name: fail2ban
+      

@@ -1,0 +1,13 @@
+---
+# tasks file for linux_fail2ban
+
+  - name: Install fail2ban
+    package:
+      name: fail2ban
+      state: installed
+
+  - name: Copy the fail2ban config
+    template:
+      src: jail.local.j2
+      dest: /etc/fail2ban/jail.local
+    notify: start and enable fail2ban
